@@ -24,7 +24,7 @@ def voice():
     if "לתרום" in user_input:
         # שלח קישור לתרומה
         donation_url = "https://chabadthailand.co.il/donations/#step-1"
-        sms_text = "תודה על הרצון לתרום לבית חב"ד! ניתן לתרום כאן: " + donation_url
+        sms_text = 'הזכה על הזכות לתרום לבית חב"ד! ייתן ה׳ שתזכה לברכה והצלחה!' + donation_url
         twilio_client.messages.create(
             body=sms_text,
             from_=TWILIO_PHONE,
@@ -36,7 +36,7 @@ def voice():
         response.dial("+66818695164")  # מספר הרב
     else:
         # תשובה עם GPT
-        gpt_prompt = f"את העוזרת של הרב מבית חב"ד בבנגקוק. מישהו אמר: "{user_input}". מה תעני בקצרה בעברית?"
+        gpt_prompt = f'את העוזרת של הרב מבית חב"ד בבנגקוק. מישהו אמר: "{user_input}". תעני בעברית בקצרה.'
         reply = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": gpt_prompt}]
@@ -48,3 +48,4 @@ def voice():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
