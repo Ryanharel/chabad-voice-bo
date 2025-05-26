@@ -7,12 +7,12 @@ import os
 app = Flask(__name__)
 
 # הגדרות OpenAI
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("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")
 
 # הגדרות Twilio
-TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
-TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
-TWILIO_PHONE = os.getenv("TWILIO_PHONE")
+TWILIO_ACCOUNT_SID = os.getenv("ACa2b89d3832a14af36ef280ca88946ef5")
+TWILIO_AUTH_TOKEN = os.getenv("713f6f33375405cde5e76e4ee1d4002c")
+TWILIO_PHONE = os.getenv("+16165850853")
 twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 @app.route("/voice", methods=["POST"])
@@ -48,4 +48,3 @@ def voice():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
