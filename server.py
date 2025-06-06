@@ -17,7 +17,7 @@ def voice():
     response = VoiceResponse()
     caller_number = request.form.get("From", "")
     user_input = request.form.get("SpeechResult", "")
-        response.say("שלום, אני העוזרת של הרב נחמיה מבית חב״ד בבנגקוק. אנחנו מתקשרים לכל מי שביקר בבית חב״ד לאחרונה כדי לבקש את עזרתו בתרומה. נשמח שתשמע אותנו לרגע.", language="he-IL", voice="Polly.Carmit")
+    response.say("שלום, אני העוזרת של הרב נחמיה מבית חב״ד בבנגקוק. אנחנו מתקשרים לכל מי שביקר בבית חב״ד לאחרונה כדי לבקש את עזרתו בתרומה. נשמח שתשמע אותנו לרגע.", language="he-IL", voice="Polly.Carmit")
 
 
     sentiment_prompt = f"נתח רגש למשפט הבא בעברית בקצרה מאוד (חיובי, שלילי, ניטרלי): {user_input}"
